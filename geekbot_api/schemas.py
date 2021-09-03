@@ -36,21 +36,40 @@ class Question(BaseModel):
     label: str
 
 
-class Standup(BaseModel):
-    id: int
+class StandupBase(BaseModel):
     name: str
     time: str
     wait_time: int
     timezone: str
     days: List[Optional[str]]
     channel: str
-    channel_ready: bool
     questions: List[Question]
     users: List[User]
-    users_total: int
-    webhooks: List[Optional[str]]
-    master: str
+    personalized: bool
+
+
+class Standup(StandupBase):
+    id: int
+    channel_ready: bool
     sync_channel_members: bool
+    users_total: int
+    master: str
+    webhooks: List[Optional[str]]
+
+
+class StandupIn(StandupBase):
+    questions: Optional[List[Question]]
+    wait_time: Optional[int]
+    timezone: Optional[str]
+    users: List[Optional[int]]
+
+
+class StandupDuplicateIn(StandupIn):
+    time: Optional[str]
+    channel: Optional[str]
+    webhooks: List[Optional[str]]
+    sync_channel_members: Optional[bool]
+    personalised: Optional[bool]
 
 
 class Image(BaseModel):
