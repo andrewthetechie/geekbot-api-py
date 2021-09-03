@@ -8,10 +8,10 @@ from pydantic import BaseModel
 
 class User(BaseModel):
     id: str
-    email: str
+    email: Optional[str]
     username: str
     realname: str
-    profile_img: AnyUrl
+    profile_img: Optional[AnyUrl]
 
 
 class Team(BaseModel):
@@ -88,13 +88,13 @@ class Answer(BaseModel):
 
 class Report(BaseModel):
     id: int
-    slack_ts: str
+    slack_ts: Optional[str]
     standup_id: str
     timestamp: int
     channel: str
-    is_anonymous: bool
+    is_anonymous: Optional[bool]
     member: User
-    questions: List[Answer]
+    answers: List[Answer]
 
 
 class AnswerIn(BaseModel):
