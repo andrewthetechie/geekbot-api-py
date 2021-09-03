@@ -7,7 +7,7 @@ Implements the Geekbot API per https://geekbot.com/developers/
         <img src="https://img.shields.io/github/last-commit/andrewthetechie/geekbot-api-py" alt="Latest Commit">
     </a>
         <img src="https://github.com/andrewthetechie/geekbot-api-py/actions/workflows/run_tests_with_tox.yaml/badge.svg?branch=main">
-        <img src="https://img.shields.io/codecov/c/github/andrewthetechie/geekbot-api-py">
+        <img src="https://codecov.io/gh/andrewthetechie/geekbot-api-py/branch/main/graph/badge.svg?token=7BK6JL2VL4"/>
     <br />
     <a href="https://pypi.org/project/geekbot-api-py" target="_blank">
         <img src="https://img.shields.io/pypi/v/geekbot-api-py" alt="Package version">
