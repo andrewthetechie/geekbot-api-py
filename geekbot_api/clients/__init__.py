@@ -60,7 +60,7 @@ class _AbstractClient(metaclass=ABCMeta):
             r = await client.delete(self._get_request_path(path), headers=self.headers)
         return r
 
-    @lru_cache
+    @lru_cache(maxsize=None)
     def _get_request_path(self, path: str = "") -> str:
         """combines self.api_path and a path string into a request path"""
         return f"{self.api_path}/{path}" if path != "" else self.api_path
