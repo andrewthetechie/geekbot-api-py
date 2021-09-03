@@ -9,10 +9,10 @@ Implements the Geekbot API per https://geekbot.com/developers/
         <img src="https://github.com/andrewthetechie/geekbot-api-py/actions/workflows/run_tests_with_tox.yaml/badge.svg?branch=main">
         <img src="https://codecov.io/gh/andrewthetechie/geekbot-api-py/branch/main/graph/badge.svg?token=7BK6JL2VL4"/>
     <br />
-    <a href="https://pypi.org/project/geekbot-api-py" target="_blank">
-        <img src="https://img.shields.io/pypi/v/geekbot-api-py" alt="Package version">
+    <a href="https://pypi.org/project/geekbot-api" target="_blank">
+        <img src="https://img.shields.io/pypi/v/geekbot-api" alt="Package version">
     </a>
-    <img src="https://img.shields.io/pypi/pyversions/geekbot-api-py">
+    <img src="https://img.shields.io/pypi/pyversions/geekbot-api">
     <img src="https://img.shields.io/badge/license-MIT-green">
 </p>
 
