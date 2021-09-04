@@ -34,7 +34,7 @@ class _AbstractClient(metaclass=ABCMeta):
         """Does a put against the geekbot api, adds "path" to the end of self.api_path"""
         async with httpx.AsyncClient() as client:
             r = await client.put(
-                self._get_request_path(path), data=data, headers=self.headers
+                self._get_request_path(path), json=data, headers=self.headers
             )
         return r
 
@@ -42,7 +42,7 @@ class _AbstractClient(metaclass=ABCMeta):
         """Does a post against the geekbot api, adds "path" to the end of self.api_path"""
         async with httpx.AsyncClient() as client:
             r = await client.post(
-                self._get_request_path(path), data=data, headers=self.headers
+                self._get_request_path(path), json=data, headers=self.headers
             )
         return r
 
@@ -50,7 +50,7 @@ class _AbstractClient(metaclass=ABCMeta):
         """Does a post against the geekbot api, adds "path" to the end of self.api_path"""
         async with httpx.AsyncClient() as client:
             r = await client.patch(
-                self._get_request_path(path), data=data, headers=self.headers
+                self._get_request_path(path), json=data, headers=self.headers
             )
         return r
 
