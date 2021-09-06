@@ -1,5 +1,5 @@
 # geekbot-api-py
-A Geekbot (https://geekbot.com/) API client in python supporting async
+A Geekbot (https://geekbot.com/) API client in python supporting async and sync operations.
 
 Implements the Geekbot API per https://geekbot.com/developers/
 <p align="center">
@@ -22,6 +22,8 @@ Implements the Geekbot API per https://geekbot.com/developers/
 -   [Python +3.6](https://www.python.org)
 -   [aioredis 2.0](https://aioredis.readthedocs.io/en/latest/)
 -   [pydantic](https://github.com/samuelcolvin/pydantic/)
+-   [httpx](https://www.python-httpx.org/)
+-   [requests](https://docs.python-requests.org/en/master/)
 
 ## Getting Started
 
@@ -35,6 +37,20 @@ Install the package
 
 Follow the directions on https://geekbot.com/developers/ to get an API Token
 
+#### Example
+    from geekbot_api.config import GeekbotAPIConfig
+    from geekbot_api.client import GeekbotAPIClient
+
+    config = GeekbotAPIConfig(api_key="api_YOURKEYGOESHERE")
+
+    client = GeekbotAPIClient(config=config)
+
+    for standup in client.standups.list():
+        standups.append(standup)
+        
+        print(standups)
+
+#### Async Example
     import asyncio
     from geekbot_api.config import GeekbotAPIConfig
     from geekbot_api.client import GeekbotAPIClient
@@ -45,7 +61,7 @@ Follow the directions on https://geekbot.com/developers/ to get an API Token
 
     async def print_standups():
         standups = list()
-        async for standup in client.standups.list():
+        async for standup in client.async_standups.list():
             standups.append(standup)
         
         print(standups)
@@ -53,6 +69,25 @@ Follow the directions on https://geekbot.com/developers/ to get an API Token
     if __name__ == "__main__":
         loop = asyncio.get_event_loop()
         loop.run_until_complete(print_standups())
+
+#### Reporting to a standup using schemas
+
+    import asyncio
+    from geekbot_api.config import GeekbotAPIConfig
+    from geekbot_api.client import GeekbotAPIClient
+    from geekbot_api.schemas import ReportIn
+
+    config = GeekbotAPIConfig(api_key="api_YOURKEYGOESHERE")
+
+    client = GeekbotAPIClient(config=config)
+    standup_id = "12345" # Your standup id
+    answers = dict() # keys are question ids, values are a dict responding to the question
+    answers['123'] = {'text': "My first answer"}
+    answers['234'] = {'text': "My second answer"}
+
+    report_in = ReportIn(standup_id=standup_id, answers=answers) # pydantic will validate your inputs
+    report = client.reports.create(report_in)
+    print(report)
 
     
 
