@@ -12,13 +12,21 @@ class _StandupsClient(_AbstractClient):
     def list(self):
         """gets Standups and yields them as a generator"""
         response = self._http_get()
-        print(response.json())
-        for standup in response.json():
-            yield Standup(**standup)
+        response_json = response.json()
+        if isinstance(response_json, list):
+            if len(response_json) == 0:
+                return
+            else:
+                for standup in response.json():
+                    yield Standup(**standup)
+        else:
+            yield Standup(**response_json)
 
-    def get(self, standup_id: str) -> Standup:
+    def get(self, standup_id: str) -> Optional[Standup]:
         """gets a standup by id"""
         response = self._http_get(path=standup_id)
+        if response.status_code == 404:
+            return None
         return Standup(**response.json())
 
     def create(self, standup_in: StandupIn) -> Standup:
@@ -60,13 +68,21 @@ class _StandupsAsyncClient(_AbstractAsyncClient):
     async def list(self):
         """gets Standups and yields them as a generator"""
         response = await self._http_get()
-        print(response.json())
-        for standup in response.json():
-            yield Standup(**standup)
+        response_json = response.json()
+        if isinstance(response_json, list):
+            if len(response_json) == 0:
+                return
+            else:
+                for standup in response.json():
+                    yield Standup(**standup)
+        else:
+            yield Standup(**response_json)
 
-    async def get(self, standup_id: str) -> Standup:
+    async def get(self, standup_id: str) -> Optional[Standup]:
         """gets a standup by id"""
         response = await self._http_get(path=standup_id)
+        if response.status_code == 404:
+            return None
         return Standup(**response.json())
 
     async def create(self, standup_in: StandupIn) -> Standup:
