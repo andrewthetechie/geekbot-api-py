@@ -45,7 +45,7 @@ class StandupBase(BaseModel):
     channel: str
     questions: List[Question]
     users: List[User]
-    personalized: bool
+    personalized: Optional[bool]
 
 
 class Standup(StandupBase):
