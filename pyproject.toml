@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "geekbot-api"
-version = "0.0.0"
+version = "0.2.0"
 description = "Async Python client for the geekbot (https://geekbot.com) api"
 authors = ["Andrew Herrington <andrew.the.techie@gmail.com>"]
 license = "MIT"
