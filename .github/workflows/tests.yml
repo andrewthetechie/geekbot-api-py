@@ -72,13 +72,15 @@ jobs:
         run: |
           import hashlib
           import sys
+          import os
 
           python = "py{}.{}".format(*sys.version_info[:2])
           payload = sys.version.encode() + sys.executable.encode()
           digest = hashlib.sha256(payload).hexdigest()
           result = "${{ runner.os }}-{}-{}-pre-commit".format(python, digest[:8])
 
-          print("::set-output name=result::{}".format(result))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+            fh.write(f"result={result}\n")
 
       - name: Restore pre-commit cache
         uses: actions/cache@v3.2.5
@@ -100,7 +102,7 @@ jobs:
         uses: "actions/upload-artifact@v3.1.2"
         with:
           name: coverage-data
-          path: ".coverage.*"
+          path: "coverage.xml"
 
   coverage:
     runs-on: ubuntu-latest
@@ -131,9 +133,9 @@ jobs:
           nox --version
 
       - name: Download coverage data
-        uses: actions/download-artifact@v3.0.1
+        uses: actions/download-artifact@v3.0.2
         with:
           name: coverage-data
 
       - name: Upload coverage report
-        uses: codecov/codecov-action@v3.1.0
+        uses: codecov/codecov-action@v3.1.1
