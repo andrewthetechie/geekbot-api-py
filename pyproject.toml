@@ -38,6 +38,7 @@ pre-commit = "^2.0.0"
 pre-commit-hooks = "^4.4.0"
 pyupgrade = "^3.3.1"
 safety = "^2.3.5"
+bandit = "^1.7.4"
 
 [tool.mypy]
 strict = true
