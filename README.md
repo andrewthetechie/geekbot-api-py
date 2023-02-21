@@ -1,7 +1,9 @@
 # geekbot-api-py
-A Geekbot (https://geekbot.com/) API client in python supporting async and sync operations.
 
-Implements the Geekbot API per https://geekbot.com/developers/
+A Geekbot (<https://geekbot.com/>) API client in python supporting async and sync operations.
+
+Implements the Geekbot API per <https://geekbot.com/developers/>
+
 <p align="center">
     <a href="https://github.com/andrewthetechie/geekbot-api-py" target="_blank">
         <img src="https://img.shields.io/github/last-commit/andrewthetechie/geekbot-api-py" alt="Latest Commit">
@@ -18,26 +20,25 @@ Implements the Geekbot API per https://geekbot.com/developers/
 
 ## Main Dependencies
 
-
--   [Python +3.6](https://www.python.org)
--   [aioredis 2.0](https://aioredis.readthedocs.io/en/latest/)
--   [pydantic](https://github.com/samuelcolvin/pydantic/)
--   [httpx](https://www.python-httpx.org/)
--   [requests](https://docs.python-requests.org/en/master/)
+- [Python +3.7](https://www.python.org)
+- [pydantic](https://github.com/samuelcolvin/pydantic/)
+- [httpx](https://www.python-httpx.org/)
+- [requests](https://docs.python-requests.org/en/master/)
 
 ## Getting Started
 
 ### Installation
+
 Install the package
 
-    
     pip install geekbot-api
 
 ### Usage
 
-Follow the directions on https://geekbot.com/developers/ to get an API Token
+Follow the directions on <https://geekbot.com/developers/> to get an API Token
 
 #### Example
+
     from geekbot_api.config import GeekbotAPIConfig
     from geekbot_api.client import GeekbotAPIClient
 
@@ -47,10 +48,11 @@ Follow the directions on https://geekbot.com/developers/ to get an API Token
 
     for standup in client.standups.list():
         standups.append(standup)
-        
+
         print(standups)
 
 #### Async Example
+
     import asyncio
     from geekbot_api.config import GeekbotAPIConfig
     from geekbot_api.client import GeekbotAPIClient
@@ -63,9 +65,9 @@ Follow the directions on https://geekbot.com/developers/ to get an API Token
         standups = list()
         async for standup in client.async_standups.list():
             standups.append(standup)
-        
+
         print(standups)
-    
+
     if __name__ == "__main__":
         loop = asyncio.get_event_loop()
         loop.run_until_complete(print_standups())
@@ -89,8 +91,6 @@ Follow the directions on https://geekbot.com/developers/ to get an API Token
     report = client.reports.create(report_in)
     print(report)
 
-    
-
 ## Development
 
 The [Makefile](./makefile) has useful targets to help setup your
@@ -99,54 +99,35 @@ multiple python versions easily.
 
 ### Environment Setup
 
--   Clone the repo and enter its root folder
+- Clone the repo and enter its root folder
 
-    ``` {.sourceCode .bash}
-    git clone https://github.com/andrewthetechie/geekbot-api-py.git && cd geekbot-api-py
-    ```
+  ```{.sourceCode .bash}
+  git clone https://github.com/andrewthetechie/geekbot-api-py.git && cd geekbot-api-py
+  ```
 
--   Create a python 3.9 virtual environment and activate it. We suggest
-    using [pyenv](https://github.com/pyenv/pyenv) to easily setup
-    multiple python environments on multiple versions.
+- Create a python 3.11 virtual environment and activate it. We suggest
+  using [pyenv](https://github.com/pyenv/pyenv) to easily setup
+  multiple python environments on multiple versions.
 
-    ``` {.sourceCode .bash}
-    # We use the extra python version (3.6, 3.7, 3.8) for tox testing
-    pyenv install 3.9.6 3.6.9 3.7.11 3.8.11
-    pyenv virtualenv 3.9.6 geekbot-api
-    pyenv local geekbot-api 3.6.9 3.7.11 3.8.11
-    ```
+- Install the dependencies
 
--   Install the dependencies
-
-    ``` {.sourceCode .bash}
-    make setup
-    ```
+  ```{.sourceCode .bash}
+  make setup
+  ```
 
 ### How to Run Tests
 
--   Run the test command to run tests on only python 3.9
+- Run the test command to run tests on only python 3.9
 
-    ``` {.sourceCode .bash}
-    make test
-    ```
+  ```{.sourceCode .bash}
+  pytest
+  ```
 
-    or
+- Run Nox to run all python version tests
 
-    ``` {.sourceCode .bash}
-    pytest
-    ```
-
--   Run the tox command to run all python version tests
-
-    ``` {.sourceCode .bash}
-    make tox
-    ```
-
-    or
-
-    ``` {.sourceCode .base}
-    tox
-    ```
+  ```{.sourceCode .bash}
+  nox -s tests
+  ```
 
 ### Test Requirements
 
@@ -155,23 +136,20 @@ coverage goals for this project are 100% coverage.
 
 ### Code Linting
 
-All code should pass Flake8 and be blackened. If you install and setup
-pre-commit (done automatically by environment setup), pre-commit will
-lint your code for you.
+Code is linted with ruff
 
 You can run the linting manually with make
 
-``` {.sourceCode .bash}
+```{.sourceCode .bash}
 make lint
 ```
 
 ## CI
 
-CI is run via Github Actions on all PRs and pushes to the main branch. 
+CI is run via Github Actions on all PRs and pushes to the main branch.
 
 Releases are automatically released by Github Actions to Pypi.
 
-License
--------
+## License
 
 Licensed under the [MIT License](./LICENSE)

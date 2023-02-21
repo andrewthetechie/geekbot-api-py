@@ -1,8 +1,0 @@
-pytest
-pytest-asyncio
-pytest-cov
-pytest-env
-pytest-mock
-pytest_httpx
-requests-mock
-tox
