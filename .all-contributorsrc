@@ -16,6 +16,16 @@
         "doc",
         "test"
       ]
+    },
+    {
+      "login": "CodingDavid8",
+      "name": "David",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54584421?v=4",
+      "profile": "https://github.com/CodingDavid8",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
