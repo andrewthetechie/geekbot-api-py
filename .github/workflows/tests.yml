@@ -2,7 +2,7 @@ name: Tests
 
 on:
   - push
-
+  - pull_request
 jobs:
   tests:
     name: ${{ matrix.session }} ${{ matrix.python }} / ${{ matrix.os }}
