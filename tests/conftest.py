@@ -3,9 +3,12 @@ import pytest
 from geekbot_api.client import GeekbotAPIClient
 from geekbot_api.config import GeekbotAPIConfig
 from geekbot_api.schemas import Question
+from geekbot_api.schemas import Answer
 from geekbot_api.schemas import Standup
 from geekbot_api.schemas import Team
 from geekbot_api.schemas import User
+from geekbot_api.schemas import Report
+from pydantic import parse_obj_as, HttpUrl
 
 
 @pytest.fixture()
@@ -26,13 +29,12 @@ def test_async_client(httpx_mock):
 
 @pytest.fixture()
 def fake_user():
-    yield User(
-        id=0,
-        email="test@test.com",
-        username="testuser",
-        realname="Testy McTest",
-        profile_img="http://fakeimg.com/fake.png",
-    )
+    yield User(id="0",
+               email="test@test.com",
+               username="testuser",
+               realname="Testy McTest",
+               profile_img=parse_obj_as(HttpUrl,
+                                        "http://fakeimg.com/fake.png"))
 
 
 @pytest.fixture()
@@ -76,7 +78,7 @@ def fake_standup(fake_user, fake_question):
         webhooks=list(),
         name="test",
         time="09:00:00",
-        wait_time="0",
+        wait_time=0,
         timezone="UTC",
         days=["Monday"],
         channel="testchannel",
@@ -84,3 +86,26 @@ def fake_standup(fake_user, fake_question):
         users=[fake_user],
         personalized=False,
     )
+
+
+@pytest.fixture()
+def fake_answer():
+    yield Answer(id=1,
+                 question="What's on your mind today?",
+                 question_id='12345',
+                 color='e37979',
+                 answer="spring, summer and fall",
+                 images=[])
+
+
+@pytest.fixture()
+def fake_report(fake_user, fake_answer):
+    """Sets up a fake report object"""
+    yield Report(id=0,
+                 slack_ts="0",
+                 standup_id="standup-1",
+                 timestamp=0,
+                 channel="testchannel",
+                 is_anonymous=True,
+                 member=fake_user,
+                 questions=[fake_answer])

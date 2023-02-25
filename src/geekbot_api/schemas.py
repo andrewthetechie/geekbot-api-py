@@ -94,7 +94,7 @@ class Report(BaseModel):
     channel: str
     is_anonymous: Optional[bool]
     member: User
-    answers: List[Answer]
+    questions: List[Answer]
 
 
 class AnswerIn(BaseModel):
