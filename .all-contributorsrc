@@ -26,6 +26,16 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "rmathew8-gh",
+      "name": "rmathew8-gh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/117225085?v=4",
+      "profile": "https://github.com/rmathew8-gh",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
