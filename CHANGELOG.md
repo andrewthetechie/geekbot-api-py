@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.1](https://github.com/andrewthetechie/geekbot-api-py/compare/v0.2.0...v0.2.1) (2023-02-25)
+
+
+### Bug Fixes
+
+* update reports schema and add tests ([#21](https://github.com/andrewthetechie/geekbot-api-py/issues/21)) ([0e3b5ee](https://github.com/andrewthetechie/geekbot-api-py/commit/0e3b5eee18fa1c909277579279b5d627bdf7678d))
+
+
+### Documentation
+
+* add andrewthetechie as a contributor for code, doc, and test ([#24](https://github.com/andrewthetechie/geekbot-api-py/issues/24)) ([1989b9f](https://github.com/andrewthetechie/geekbot-api-py/commit/1989b9f244323b90e9d64226f274e3063076fd0e))
+* add CodingDavid8 as a contributor for code, and bug ([#25](https://github.com/andrewthetechie/geekbot-api-py/issues/25)) ([b0c4a7e](https://github.com/andrewthetechie/geekbot-api-py/commit/b0c4a7edc12b0eb7f6faf1473ff4971b66930509))
+* add rmathew8-gh as a contributor for code, and test ([#26](https://github.com/andrewthetechie/geekbot-api-py/issues/26)) ([1f3d0da](https://github.com/andrewthetechie/geekbot-api-py/commit/1f3d0da0dbdbd2a6305cc51de89160917a31a8d4))
+* update readme with allcontributors block ([f86c3fd](https://github.com/andrewthetechie/geekbot-api-py/commit/f86c3fdc4f6a91259e2b368c86b7174926162fe8))
+
 ## [0.2.0](https://github.com/andrewthetechie/geekbot-api-py/compare/v0.1.0...v0.2.0) (2023-02-21)
 
 
