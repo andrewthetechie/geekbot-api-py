@@ -1,6 +1,6 @@
 # geekbot-api-py
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 A Geekbot (<https://geekbot.com/>) API client in python supporting async and sync operations.
@@ -169,6 +169,7 @@ Thanks go to these wonderful people ([emoji key](https://allcontributors.org/doc
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/andrewthetechie"><img src="https://avatars.githubusercontent.com/u/1377314?v=4?s=100" width="100px;" alt="Andrew"/><br /><sub><b>Andrew</b></sub></a><br /><a href="https://github.com/andrewthetechie/geekbot-api-py/commits?author=andrewthetechie" title="Code">💻</a> <a href="https://github.com/andrewthetechie/geekbot-api-py/commits?author=andrewthetechie" title="Documentation">📖</a> <a href="https://github.com/andrewthetechie/geekbot-api-py/commits?author=andrewthetechie" title="Tests">⚠️</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/CodingDavid8"><img src="https://avatars.githubusercontent.com/u/54584421?v=4?s=100" width="100px;" alt="David"/><br /><sub><b>David</b></sub></a><br /><a href="https://github.com/andrewthetechie/geekbot-api-py/commits?author=CodingDavid8" title="Code">💻</a> <a href="https://github.com/andrewthetechie/geekbot-api-py/issues?q=author%3ACodingDavid8" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/rmathew8-gh"><img src="https://avatars.githubusercontent.com/u/117225085?v=4?s=100" width="100px;" alt="rmathew8-gh"/><br /><sub><b>rmathew8-gh</b></sub></a><br /><a href="https://github.com/andrewthetechie/geekbot-api-py/commits?author=rmathew8-gh" title="Code">💻</a> <a href="https://github.com/andrewthetechie/geekbot-api-py/commits?author=rmathew8-gh" title="Tests">⚠️</a></td>
     </tr>
   </tbody>
 </table>
