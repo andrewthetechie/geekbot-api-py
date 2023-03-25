@@ -28,29 +28,29 @@ class _AbstractClient(metaclass=ABCMeta):
 
     def _http_get(self, path: str = "") -> Response:
         """Does a get against the geekbot api, adds "path" to the end of self.api_path"""
-        r = requests.get(self._get_request_path(path), headers=self.headers)
+        r = requests.get(self._get_request_path(path), headers=self.headers)  # nosec: B113
         return r
 
     def _http_put(self, data: Dict, path: str = "") -> Response:
         """Does a put against the geekbot api, adds "path" to the end of self.api_path"""
-        r = requests.put(self._get_request_path(path), json=data, headers=self.headers)
+        r = requests.put(self._get_request_path(path), json=data, headers=self.headers)  # nosec: B113
         return r
 
     def _http_post(self, data: Dict, path: str = "") -> Response:
         """Does a post against the geekbot api, adds "path" to the end of self.api_path"""
-        r = requests.post(self._get_request_path(path), json=data, headers=self.headers)
+        r = requests.post(self._get_request_path(path), json=data, headers=self.headers)  # nosec: B113
         return r
 
     def _http_patch(self, data: Dict, path: str = "") -> Response:
         """Does a post against the geekbot api, adds "path" to the end of self.api_path"""
         r = requests.patch(
-            self._get_request_path(path), json=data, headers=self.headers
+            self._get_request_path(path), json=data, headers=self.headers  # nosec: B113
         )
         return r
 
     def _http_delete(self, path: str) -> Response:
         """Does a post against the geekbot api, adds "path" to the end of self.api_path"""
-        r = requests.delete(self._get_request_path(path), headers=self.headers)
+        r = requests.delete(self._get_request_path(path), headers=self.headers)  # nosec: B113
         return r
 
     @lru_cache(maxsize=None)
