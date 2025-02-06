@@ -1,4 +1,7 @@
 # geekbot-api-py
+
+**Geekbot has taken the unfriendly stance of locking free users out of the API and other features as of 2025-02-06. I am not going to pay to maintain a library for free.**
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
